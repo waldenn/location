@@ -260,6 +260,28 @@ $(document).ready(function() {
 
                         var img = document.getElementById('image');
                         img.src = place.photo.value;
+
+
+												// set image source link
+												let commons_file_name = img.src.replace('http://commons.wikimedia.org/wiki/Special:FilePath/', '');
+
+												// cleanup SVG-exported image names
+												if ( commons_file_name.endsWith( '.svg.png' ) ){
+													commons_file_name = commons_file_name.replace( '.svg.png', '.svg' );
+												}
+												else if ( commons_file_name.endsWith( '.svg.jpg' ) ){
+													commons_file_name = commons_file_name.replace( '.svg.jpg', '.svg' );
+												}
+
+												if ( !valid( commons_file_name ) ){ // different URL-format
+
+													commons_file_name = img.src.split('/').pop();
+
+												}
+
+												$('#image-source').attr('href', `https://commons.wikimedia.org/w/index.php?search=${commons_file_name}&title=Special:MediaSearch&go=Go&type=image` );
+
+
                         window.actualLatLng = {lat: place.lat.value, lon: place.lon.value};
                         window.locID = place.item.value;
 

@@ -45,6 +45,7 @@ html, body {
     top: 340px;
     right: 20px;
     z-index: 1000;
+    background: #2880ca !important;
 }
 
 #guessButton:hover {
@@ -134,4 +135,27 @@ select {
 /* Change cursor when over entire map */
 .leaflet-container {
     cursor: default !important;
+}
+
+#copyright-notice {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  color: white;
+  background-color: #11111180;
+  left: 1em;
+  bottom: 1em;
+  font-family: fontAwesome;
+  border-radius: 0.2em;
+  font-size: 0.6em;
+  padding: 0.5em;
+}
+
+#image-source {
+  color: #ffffffd4;
+  padding: 1em;
+}
+
+#image-source:hover {
+  color: #f3a8ab;
 }
